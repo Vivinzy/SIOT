@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão de controle de LEDS com arduino via web</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: row; 
+            align-items: flex-start;
+            gap: 24px;
+        }
+        .caixa-led {
+            border: 2px solid #000000;
+            border-radius: 5px;
+            padding: 16px;
+            width: 220px;
+            background: #ffffff;
+            text-align: center;
+        }
+        .caixa-led h2 {
+            margin-top: 0;
+            color: #000000;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .caixa-led button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-ligar {
+            background-color: #4CAF50;
+        }
+        .btn-desligar {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>Botão de controle de leds com arduino via web</h1>
+    <div class="container">
+        <div class="caixa-led">
+            <h2>LED 1 (verde)</h2>
+            <button class="btn-ligar" onclick="fetch('/toggle-led?state=on')">Ligar</button>
+            <button class="btn-desligar" onclick="fetch('/toggle-led?state=off')">Desligar</button>
+        </div>
+        <div class="caixa-led">
+            <h2>LED 2 (vermelho)</h2>
+            <button class="btn-ligar" onclick="fetch('/toggle-led2?state=on')">Ligar</button>
+            <button class="btn-desligar" onclick="fetch('/toggle-led2?state=off')">Desligar</button>
+        </div>
+    </div>
+</body>
+</html>
